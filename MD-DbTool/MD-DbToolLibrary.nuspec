@@ -3,13 +3,28 @@
   <metadata>
     <id>MD-DbToolLibrary</id>
     <version>1.0.0</version>
-    <authors>Your Name</authors>
+    <authors>Mujahid Ali Syed</authors>
     <description>A comprehensive database utility library for .NET developers</description>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <repository type="git" url="https://github.com/your-username/MD-DbToolLibrary.git" />
+    <readme>docs\README.md</readme>
+    <repository type="git" url="https://github.com/mujahid-Dev89/MD-DbTool.git" />
+    <!-- Release Notes -->
+    <releaseNotes>
+      Version 1.0.0:
+      - Initial release of the MD-DbToolLibrary
+    </releaseNotes>
+
+    <!-- Copyright -->
+    <copyright>Copyright (c) 2024 Mujahid Dev Tool Kit</copyright>
+
+    <!-- Tags -->
+    <tags>database;utilities;data;net-framework;csharp</tags>
+    <projectUrl>https://github.com/mujahid-Dev89/MD-DbTool</projectUrl>
+
   </metadata>
   <files>
     <file src="bin\Release\MD-DbTool.dll" target="lib\net47" />
+    <file src="..\readme.md" target="docs\" />
   </files>
 </package>

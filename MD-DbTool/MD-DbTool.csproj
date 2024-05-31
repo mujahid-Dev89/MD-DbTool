@@ -46,7 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="MD-DbToolLibrary.nuspec" />
-    <None Include="README.md" />
+    <None Include="docs\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
