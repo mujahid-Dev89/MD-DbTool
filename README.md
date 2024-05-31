@@ -25,7 +25,7 @@ using MDDbTool;
 3. Create an instance of the MDDbToolLibrary class and utilize the available methods to interact with your database.
 
 ```
-var dbTool = new MDDbToolLibrary();
+var dbTool = new MDDbToolLibrary(@"Server=DESKTOP-MDDBTOOL\SQLEXPRESS,90999;Database=NorthWind;User Id=sa;Password=1234; MultipleActiveResultSets=True;Connect Timeout=30");
 string connectionString = dbTool.ConnectionString();
 DataTable data = dbTool.GetDataTable("MyTable", "id, name", "WHERE id = 1");
 ```
