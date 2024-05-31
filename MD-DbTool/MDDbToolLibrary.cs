@@ -260,33 +260,7 @@ namespace MDDbTool
             return dataTable;
         }
 
-        /// <summary>
-        /// Retrieves data from the Hive database and returns the results in a DataTable.
-        /// </summary>
-        /// <param name="TableName">Name of the table to retrieve data from.</param>
-        /// <param name="columnname">Optional parameter specifying columns to retrieve (default is "*").</param>
-        /// <param name="condition">Optional condition to filter the data.</param>
-        /// <param name="Parameter">Optional parameter to pass as a parameter to the query.</param>
-        /// <returns>A DataTable containing the results from the Hive database.</returns>
-
-        public DataTable GetDataTableHive(string TableName, string columnname = "*", string condition = "", string Parameter = "")
-        {
-
-            DataTable dt = new DataTable();
-            string CS = ConnectionStringHive();
-            SqlConnection con = new SqlConnection(CS);
-            string query = string.Format("select {0}  {1} {2}", columnname, TableName, condition);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@MonoCode", Parameter);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            if (rdr.HasRows)
-            {
-                dt.Load(rdr);
-            }
-            con.Close();
-            return dt;
-        }
+       
         /// <summary>
         /// Searches for a specific keyword in a specified column of a database table.
         /// </summary>
@@ -674,31 +648,7 @@ namespace MDDbTool
             return result;
         }
 
-        /// <summary>
-        /// Checks the validity of a single value in the specified column of the Hive database table based on the provided conditions.
-        /// </summary>
-        /// <param name="Tablename">Name of the Hive table to check for validity.</param>
-        /// <param name="columnName">Name of the column to check.</param>
-        /// <param name="condition">Additional conditions for the SQL query.</param>
-        /// <returns>True if the value exists in the specified column, otherwise false.</returns>
-        public bool SingleValueValidityCheckHive(string Tablename, string columnName, string condition)
-        {
-            bool result = false;
-            string CS = ConnectionStringHive();
-            using (SqlConnection con = new SqlConnection(CS))
-            {
-                string query = string.Format("Select {0} from {1} {2} ", columnName, Tablename, condition);
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.HasRows)
-                {
-                    result = true;
-                }
-                con.Close();
-            }
-            return result;
-        }
+       
         /// <summary>
         /// Checks the validity of a single value in the specified column of the table based on the provided conditions.
         /// </summary>
@@ -868,28 +818,7 @@ namespace MDDbTool
             con.Close();
             return dt;
         }
-        /// <summary>
-        /// Retrieves a DataTable from a custom SQL query using the Hive connection string.
-        /// </summary>
-        /// <param name="SqlQuery">Custom SQL query to execute.</param>
-        /// <returns>DataTable containing the result of the custom SQL query.</returns>
-        public DataTable GetDataTablePassingFullQueryHive(string SqlQuery)
-        {
-
-            DataTable dt = new DataTable();
-            string CS = ConnectionStringHive();
-            SqlConnection con = new SqlConnection(CS);
-
-            SqlCommand cmd = new SqlCommand(SqlQuery, con);
-            con.Open();
-            SqlDataReader rdr = cmd.ExecuteReader();
-            if (rdr.HasRows)
-            {
-                dt.Load(rdr);
-            }
-            con.Close();
-            return dt;
-        }
+        
         /// <summary>
         /// Deletes records from the specified table based on the provided conditions.
         /// </summary>
