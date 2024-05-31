@@ -11,6 +11,14 @@ namespace MDDbTool
 {
     public class MDDbToolLibrary
     {
+        /// <summary>
+        /// Create Mujahid's Dev DbTool Library Object
+        /// </summary>
+        /// <param name="connectionstring"> Pass your Connection String</param>
+        public MDDbToolLibrary(string connectionstring)
+        {
+            ConnectionStringHub = connectionstring;
+        }
 
         public static string ConnectionStringHub;
         /// <summary>
