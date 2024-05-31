@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MD-DbToolLibrary</id>
+    <version>1.0.0</version>
+    <authors>Your Name</authors>
+    <description>A comprehensive database utility library for .NET developers</description>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <repository type="git" url="https://github.com/your-username/MD-DbToolLibrary.git" />
+  </metadata>
+  <files>
+    <file src="bin\Release\MD-DbTool.dll" target="lib\net47" />
+  </files>
+</package>
